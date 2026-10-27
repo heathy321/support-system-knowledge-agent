@@ -1,0 +1,6 @@
+{
+  "repository": "https://github.com/osTicket/osTicket",
+  "commit_sha": "8d38b0619649a50ee7cbbf37085f5d297fdc6f36",
+  "license": "GPL-2.0",
+  "index_path": "data/indexes/osticket.json"
+}

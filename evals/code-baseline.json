@@ -1,0 +1,134 @@
+{
+  "repository": "https://github.com/osTicket/osTicket",
+  "commit_sha": "8d38b0619649a50ee7cbbf37085f5d297fdc6f36",
+  "index_sha256": "676f40c4a68e3900e92676dab06fd3d89d08d97e6c1f616ab040b6078a738623",
+  "cases": 12,
+  "passed": 12,
+  "results": [
+    {
+      "id": "overview",
+      "status": "answered",
+      "reason": "code_evidence_found",
+      "files": [
+        "open.php",
+        "scp/login.php",
+        "api/http.php",
+        "include/class.ticket.php"
+      ],
+      "passed": true,
+      "latency_ms": 1.83
+    },
+    {
+      "id": "staff-login",
+      "status": "answered",
+      "reason": "code_evidence_found",
+      "files": [
+        "scp/login.php",
+        "include/class.auth.php",
+        "login.php",
+        "include/class.mail.php"
+      ],
+      "passed": true,
+      "latency_ms": 619.033
+    },
+    {
+      "id": "ticket-create",
+      "status": "answered",
+      "reason": "code_evidence_found",
+      "files": [
+        "open.php",
+        "include/api.tickets.php",
+        "include/class.ticket.php",
+        "include/staff/templates/tickets.tmpl.php"
+      ],
+      "passed": true,
+      "latency_ms": 539.025
+    },
+    {
+      "id": "api-401",
+      "status": "answered",
+      "reason": "code_evidence_found",
+      "files": [
+        "include/class.api.php",
+        "include/api.tickets.php",
+        "include/api.cron.php",
+        "include/class.ajax.php"
+      ],
+      "passed": true,
+      "latency_ms": 563.87
+    },
+    {
+      "id": "symbol",
+      "status": "answered",
+      "reason": "code_evidence_found",
+      "files": [
+        "include/class.api.php",
+        "include/api.tickets.php",
+        "include/api.cron.php"
+      ],
+      "passed": true,
+      "latency_ms": 398.11
+    },
+    {
+      "id": "read-file",
+      "status": "answered",
+      "reason": "code_evidence_found",
+      "files": [
+        "scp/login.php"
+      ],
+      "passed": true,
+      "latency_ms": 0.947
+    },
+    {
+      "id": "read-readme",
+      "status": "answered",
+      "reason": "code_evidence_found",
+      "files": [
+        "README.md"
+      ],
+      "passed": true,
+      "latency_ms": 0.788
+    },
+    {
+      "id": "unknown-symbol",
+      "status": "insufficient_evidence",
+      "reason": "no_code_evidence",
+      "files": [],
+      "passed": true,
+      "latency_ms": 363.99
+    },
+    {
+      "id": "vague-target",
+      "status": "needs_clarification",
+      "reason": "missing_code_target",
+      "files": [],
+      "passed": true,
+      "latency_ms": 0.709
+    },
+    {
+      "id": "unindexed-file",
+      "status": "insufficient_evidence",
+      "reason": "file_not_indexed",
+      "files": [],
+      "passed": true,
+      "latency_ms": 0.453
+    },
+    {
+      "id": "outside-path",
+      "status": "insufficient_evidence",
+      "reason": "invalid_repository_path",
+      "files": [],
+      "passed": true,
+      "latency_ms": 0.03
+    },
+    {
+      "id": "not-an-executor",
+      "status": "insufficient_evidence",
+      "reason": "read_only_analysis",
+      "files": [],
+      "passed": true,
+      "latency_ms": 0.398
+    }
+  ],
+  "limitations": "Development regressions for static location and evidence integrity, not semantic comprehension or runtime root-cause validation."
+}

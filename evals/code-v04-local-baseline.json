@@ -1,0 +1,612 @@
+{
+  "backend": "local",
+  "repository": "https://github.com/osTicket/osTicket",
+  "commit_sha": "8d38b0619649a50ee7cbbf37085f5d297fdc6f36",
+  "index_sha256": "676f40c4a68e3900e92676dab06fd3d89d08d97e6c1f616ab040b6078a738623",
+  "cases": 20,
+  "passed": 20,
+  "results": [
+    {
+      "id": "overview",
+      "status": "answered",
+      "reason": "code_evidence_found",
+      "files": [
+        "open.php",
+        "scp/login.php",
+        "api/http.php",
+        "include/class.ticket.php"
+      ],
+      "passed": true,
+      "latency_ms": 93.029,
+      "evidence_chars": 3776,
+      "contexts": [
+        {
+          "file": "open.php",
+          "kind": "line_window",
+          "symbol": null,
+          "line_start": 39,
+          "line_end": 62,
+          "matched_line": 51
+        },
+        {
+          "file": "scp/login.php",
+          "kind": "line_window",
+          "symbol": null,
+          "line_start": 60,
+          "line_end": 83,
+          "matched_line": 72
+        },
+        {
+          "file": "api/http.php",
+          "kind": "line_window",
+          "symbol": null,
+          "line_start": 7,
+          "line_end": 30,
+          "matched_line": 20
+        },
+        {
+          "file": "include/class.ticket.php",
+          "kind": "line_window",
+          "symbol": null,
+          "line_start": 27,
+          "line_end": 50,
+          "matched_line": 39
+        }
+      ]
+    },
+    {
+      "id": "staff-login",
+      "status": "answered",
+      "reason": "code_evidence_found",
+      "files": [
+        "scp/login.php",
+        "include/class.auth.php",
+        "login.php",
+        "include/class.mail.php"
+      ],
+      "passed": true,
+      "latency_ms": 754.605,
+      "evidence_chars": 2512,
+      "contexts": [
+        {
+          "file": "scp/login.php",
+          "kind": "line_window",
+          "symbol": null,
+          "line_start": 1,
+          "line_end": 24,
+          "matched_line": 3
+        },
+        {
+          "file": "include/class.auth.php",
+          "kind": "line_window",
+          "symbol": null,
+          "line_start": 525,
+          "line_end": 548,
+          "matched_line": 537
+        },
+        {
+          "file": "login.php",
+          "kind": "line_window",
+          "symbol": null,
+          "line_start": 1,
+          "line_end": 24,
+          "matched_line": 3
+        },
+        {
+          "file": "include/class.mail.php",
+          "kind": "complete_symbol",
+          "symbol": "login",
+          "line_start": 450,
+          "line_end": 457,
+          "matched_line": 450
+        }
+      ]
+    },
+    {
+      "id": "ticket-create",
+      "status": "answered",
+      "reason": "code_evidence_found",
+      "files": [
+        "open.php",
+        "include/api.tickets.php",
+        "include/class.ticket.php",
+        "include/staff/templates/tickets.tmpl.php"
+      ],
+      "passed": true,
+      "latency_ms": 674.104,
+      "evidence_chars": 4181,
+      "contexts": [
+        {
+          "file": "open.php",
+          "kind": "line_window",
+          "symbol": null,
+          "line_start": 39,
+          "line_end": 62,
+          "matched_line": 51
+        },
+        {
+          "file": "include/api.tickets.php",
+          "kind": "complete_symbol",
+          "symbol": "createTicket",
+          "line_start": 138,
+          "line_end": 175,
+          "matched_line": 149
+        },
+        {
+          "file": "include/class.ticket.php",
+          "kind": "line_window",
+          "symbol": null,
+          "line_start": 96,
+          "line_end": 119,
+          "matched_line": 108
+        },
+        {
+          "file": "include/staff/templates/tickets.tmpl.php",
+          "kind": "line_window",
+          "symbol": null,
+          "line_start": 72,
+          "line_end": 95,
+          "matched_line": 84
+        }
+      ]
+    },
+    {
+      "id": "api-401",
+      "status": "answered",
+      "reason": "code_evidence_found",
+      "files": [
+        "include/class.api.php",
+        "include/api.tickets.php",
+        "include/api.cron.php",
+        "include/class.ajax.php"
+      ],
+      "passed": true,
+      "latency_ms": 622.828,
+      "evidence_chars": 1577,
+      "contexts": [
+        {
+          "file": "include/class.api.php",
+          "kind": "complete_symbol",
+          "symbol": "requireApiKey",
+          "line_start": 196,
+          "line_end": 205,
+          "matched_line": 200
+        },
+        {
+          "file": "include/api.tickets.php",
+          "kind": "complete_symbol",
+          "symbol": "create",
+          "line_start": 113,
+          "line_end": 134,
+          "matched_line": 116
+        },
+        {
+          "file": "include/api.cron.php",
+          "kind": "complete_symbol",
+          "symbol": "execute",
+          "line_start": 6,
+          "line_end": 12,
+          "matched_line": 9
+        },
+        {
+          "file": "include/class.ajax.php",
+          "kind": "complete_symbol",
+          "symbol": "staffOnly",
+          "line_start": 29,
+          "line_end": 38,
+          "matched_line": 33
+        }
+      ]
+    },
+    {
+      "id": "symbol",
+      "status": "answered",
+      "reason": "code_evidence_found",
+      "files": [
+        "include/class.api.php",
+        "include/api.tickets.php",
+        "include/api.cron.php"
+      ],
+      "passed": true,
+      "latency_ms": 425.839,
+      "evidence_chars": 1311,
+      "contexts": [
+        {
+          "file": "include/class.api.php",
+          "kind": "complete_symbol",
+          "symbol": "requireApiKey",
+          "line_start": 196,
+          "line_end": 205,
+          "matched_line": 196
+        },
+        {
+          "file": "include/api.tickets.php",
+          "kind": "complete_symbol",
+          "symbol": "create",
+          "line_start": 113,
+          "line_end": 134,
+          "matched_line": 115
+        },
+        {
+          "file": "include/api.cron.php",
+          "kind": "complete_symbol",
+          "symbol": "execute",
+          "line_start": 6,
+          "line_end": 12,
+          "matched_line": 8
+        }
+      ]
+    },
+    {
+      "id": "read-file",
+      "status": "answered",
+      "reason": "code_evidence_found",
+      "files": [
+        "scp/login.php"
+      ],
+      "passed": true,
+      "latency_ms": 3.41,
+      "evidence_chars": 777,
+      "contexts": [
+        {
+          "file": "scp/login.php",
+          "kind": "line_window",
+          "symbol": null,
+          "line_start": 4,
+          "line_end": 27,
+          "matched_line": 16
+        }
+      ]
+    },
+    {
+      "id": "read-readme",
+      "status": "answered",
+      "reason": "code_evidence_found",
+      "files": [
+        "README.md"
+      ],
+      "passed": true,
+      "latency_ms": 1.271,
+      "evidence_chars": 1018,
+      "contexts": [
+        {
+          "file": "README.md",
+          "kind": "line_window",
+          "symbol": null,
+          "line_start": 1,
+          "line_end": 24,
+          "matched_line": 1
+        }
+      ]
+    },
+    {
+      "id": "unknown-symbol",
+      "status": "insufficient_evidence",
+      "reason": "no_code_evidence",
+      "files": [],
+      "passed": true,
+      "latency_ms": 384.641,
+      "evidence_chars": 0,
+      "contexts": []
+    },
+    {
+      "id": "vague-target",
+      "status": "needs_clarification",
+      "reason": "missing_code_target",
+      "files": [],
+      "passed": true,
+      "latency_ms": 1.101,
+      "evidence_chars": 0,
+      "contexts": []
+    },
+    {
+      "id": "unindexed-file",
+      "status": "insufficient_evidence",
+      "reason": "file_not_indexed",
+      "files": [],
+      "passed": true,
+      "latency_ms": 0.849,
+      "evidence_chars": 0,
+      "contexts": []
+    },
+    {
+      "id": "outside-path",
+      "status": "insufficient_evidence",
+      "reason": "invalid_repository_path",
+      "files": [],
+      "passed": true,
+      "latency_ms": 0.032,
+      "evidence_chars": 0,
+      "contexts": []
+    },
+    {
+      "id": "not-an-executor",
+      "status": "insufficient_evidence",
+      "reason": "read_only_analysis",
+      "files": [],
+      "passed": true,
+      "latency_ms": 0.794,
+      "evidence_chars": 0,
+      "contexts": []
+    },
+    {
+      "id": "api401-paraphrase",
+      "status": "answered",
+      "reason": "code_evidence_found",
+      "files": [
+        "include/class.api.php",
+        "include/api.tickets.php",
+        "include/api.cron.php",
+        "include/class.ajax.php"
+      ],
+      "passed": true,
+      "latency_ms": 615.215,
+      "evidence_chars": 1577,
+      "contexts": [
+        {
+          "file": "include/class.api.php",
+          "kind": "complete_symbol",
+          "symbol": "requireApiKey",
+          "line_start": 196,
+          "line_end": 205,
+          "matched_line": 200
+        },
+        {
+          "file": "include/api.tickets.php",
+          "kind": "complete_symbol",
+          "symbol": "create",
+          "line_start": 113,
+          "line_end": 134,
+          "matched_line": 116
+        },
+        {
+          "file": "include/api.cron.php",
+          "kind": "complete_symbol",
+          "symbol": "execute",
+          "line_start": 6,
+          "line_end": 12,
+          "matched_line": 9
+        },
+        {
+          "file": "include/class.ajax.php",
+          "kind": "complete_symbol",
+          "symbol": "staffOnly",
+          "line_start": 29,
+          "line_end": 38,
+          "matched_line": 33
+        }
+      ]
+    },
+    {
+      "id": "api403",
+      "status": "answered",
+      "reason": "code_evidence_found",
+      "files": [
+        "include/api.tickets.php",
+        "include/ajax.orgs.php",
+        "include/ajax.users.php",
+        "include/class.ticket.php"
+      ],
+      "passed": true,
+      "latency_ms": 746.685,
+      "evidence_chars": 3763,
+      "contexts": [
+        {
+          "file": "include/api.tickets.php",
+          "kind": "complete_symbol",
+          "symbol": "createTicket",
+          "line_start": 138,
+          "line_end": 175,
+          "matched_line": 159
+        },
+        {
+          "file": "include/ajax.orgs.php",
+          "kind": "line_window",
+          "symbol": null,
+          "line_start": 4,
+          "line_end": 27,
+          "matched_line": 16
+        },
+        {
+          "file": "include/ajax.users.php",
+          "kind": "line_window",
+          "symbol": null,
+          "line_start": 6,
+          "line_end": 29,
+          "matched_line": 18
+        },
+        {
+          "file": "include/class.ticket.php",
+          "kind": "line_window",
+          "symbol": null,
+          "line_start": 4071,
+          "line_end": 4094,
+          "matched_line": 4083
+        }
+      ]
+    },
+    {
+      "id": "api-key-accessor",
+      "status": "answered",
+      "reason": "code_evidence_found",
+      "files": [
+        "include/class.api.php"
+      ],
+      "passed": true,
+      "latency_ms": 432.318,
+      "evidence_chars": 85,
+      "contexts": [
+        {
+          "file": "include/class.api.php",
+          "kind": "complete_symbol",
+          "symbol": "getApiKey",
+          "line_start": 192,
+          "line_end": 194,
+          "matched_line": 192
+        }
+      ]
+    },
+    {
+      "id": "remote-address-accessor",
+      "status": "answered",
+      "reason": "code_evidence_found",
+      "files": [
+        "include/api.cron.php",
+        "include/class.api.php"
+      ],
+      "passed": true,
+      "latency_ms": 424.709,
+      "evidence_chars": 200,
+      "contexts": [
+        {
+          "file": "include/api.cron.php",
+          "kind": "complete_symbol",
+          "symbol": "getRemoteAddr",
+          "line_start": 29,
+          "line_end": 32,
+          "matched_line": 29
+        },
+        {
+          "file": "include/class.api.php",
+          "kind": "complete_symbol",
+          "symbol": "getRemoteAddr",
+          "line_start": 188,
+          "line_end": 190,
+          "matched_line": 188
+        }
+      ]
+    },
+    {
+      "id": "staff-login-paraphrase",
+      "status": "answered",
+      "reason": "code_evidence_found",
+      "files": [
+        "scp/login.php",
+        "include/class.auth.php",
+        "login.php",
+        "include/class.mail.php"
+      ],
+      "passed": true,
+      "latency_ms": 707.542,
+      "evidence_chars": 2512,
+      "contexts": [
+        {
+          "file": "scp/login.php",
+          "kind": "line_window",
+          "symbol": null,
+          "line_start": 1,
+          "line_end": 24,
+          "matched_line": 3
+        },
+        {
+          "file": "include/class.auth.php",
+          "kind": "line_window",
+          "symbol": null,
+          "line_start": 525,
+          "line_end": 548,
+          "matched_line": 537
+        },
+        {
+          "file": "login.php",
+          "kind": "line_window",
+          "symbol": null,
+          "line_start": 1,
+          "line_end": 24,
+          "matched_line": 3
+        },
+        {
+          "file": "include/class.mail.php",
+          "kind": "complete_symbol",
+          "symbol": "login",
+          "line_start": 450,
+          "line_end": 457,
+          "matched_line": 450
+        }
+      ]
+    },
+    {
+      "id": "ticket-create-paraphrase",
+      "status": "answered",
+      "reason": "code_evidence_found",
+      "files": [
+        "open.php",
+        "include/api.tickets.php",
+        "include/class.ticket.php",
+        "include/staff/templates/tickets.tmpl.php"
+      ],
+      "passed": true,
+      "latency_ms": 658.485,
+      "evidence_chars": 4181,
+      "contexts": [
+        {
+          "file": "open.php",
+          "kind": "line_window",
+          "symbol": null,
+          "line_start": 39,
+          "line_end": 62,
+          "matched_line": 51
+        },
+        {
+          "file": "include/api.tickets.php",
+          "kind": "complete_symbol",
+          "symbol": "createTicket",
+          "line_start": 138,
+          "line_end": 175,
+          "matched_line": 149
+        },
+        {
+          "file": "include/class.ticket.php",
+          "kind": "line_window",
+          "symbol": null,
+          "line_start": 96,
+          "line_end": 119,
+          "matched_line": 108
+        },
+        {
+          "file": "include/staff/templates/tickets.tmpl.php",
+          "kind": "line_window",
+          "symbol": null,
+          "line_start": 72,
+          "line_end": 95,
+          "matched_line": 84
+        }
+      ]
+    },
+    {
+      "id": "unknown-status",
+      "status": "insufficient_evidence",
+      "reason": "no_code_evidence",
+      "files": [],
+      "passed": true,
+      "latency_ms": 641.137,
+      "evidence_chars": 0,
+      "contexts": []
+    },
+    {
+      "id": "explicit-symbol-notfound",
+      "status": "insufficient_evidence",
+      "reason": "no_code_evidence",
+      "files": [],
+      "passed": true,
+      "latency_ms": 394.13,
+      "evidence_chars": 0,
+      "contexts": []
+    }
+  ],
+  "cases_sha256": "cab704e66bc63fe2e646731396a8d7f4fb3c5022fccf6ae7f7c412ee07768b49",
+  "citation_integrity": {
+    "passed": 40,
+    "total": 40
+  },
+  "hit_line_visible": {
+    "passed": 40,
+    "total": 40
+  },
+  "backend_parity": null,
+  "context_counts": {
+    "line_window": 21,
+    "complete_symbol": 19
+  },
+  "latency_p50_ms": 425.274,
+  "limitations": "Hand-authored development regressions, not held-out evaluation. Lexical declaration boundaries are not AST validation. Context counts describe coverage, not correctness. Latency includes per-request process startup for MCP; parity comparison latency is excluded."
+}

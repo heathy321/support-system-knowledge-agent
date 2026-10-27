@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="面向旅行客服与运营的公开政策知识检索工作台。">
+  <title>客服协助代理 · 政策知识工作台与代码分析</title>
+  <link rel="icon" href="data:,"><link rel="stylesheet" href="/static/styles.css?v=0.4.0">
+  <script src="/static/app.js?v=0.4.0" defer></script>
+</head>
+<body>
+<aside class="sidebar">
+  <a class="brand" href="/" aria-label="Travel Ops 首页"><span class="brand-icon">↗</span><span>travel<span class="brand-light">ops</span><small>KNOWLEDGE WORKSPACE</small></span></a>
+  <div class="workspace-label">工作空间 <span>DEMO</span></div>
+  <nav aria-label="主导航">
+    <button id="nav-ask" class="nav-item active" type="button" aria-current="page"><span>⌕</span>客服协助代理</button>
+    <button id="nav-library" class="nav-item" type="button"><span>▤</span>公开资料库</button>
+    <a class="nav-item" href="/docs" target="_blank" rel="noopener"><span>⌘</span>API 文档 <span class="external">↗</span></a>
+  </nav>
+  <div class="side-note"><span class="small-label">工作原则</span><p>每一个结论，<br>都有据可查。</p><div class="tiny">条件不足时追问<br>证据不足时停止推断</div></div>
+  <footer class="side-footer"><span class="dot"></span> 本地工具协作模式<small>v0.4 · 无需模型密钥</small></footer>
+</aside>
+<main>
+  <header class="topbar"><span>运营支持 <span class="slash">/</span> <strong id="breadcrumb">客服协助代理</strong></span><span class="local-badge">独立作品集 Demo</span></header>
+  <section class="page-intro"><div><div class="eyebrow">CUSTOMER SUPPORT AGENT</div><h1 id="page-title">客服协助代理</h1><p>查询旅行政策，或调用「代码分析器」定位 osTicket 代码与证据。</p></div><span class="mode-pill"><span class="dot"></span> 主代理 + 子代理</span></section>
+  <div class="scope-strip"><span class="scope-airline">◎ <strong>Peach 政策 / osTicket 代码</strong></span><span>公开资料 · 只读分析</span><span id="corpus-summary">正在检查资料库…</span><span class="scope-right" id="review-date">—</span></div>
+  <section id="workspace" class="workspace-grid">
+    <div class="input-column">
+      <form id="ask-form" class="card question-card">
+        <div class="card-heading"><span class="step">01</span><h2>描述你的问题</h2><span class="tiny">一次一个主题</span></div>
+        <label class="task-label" for="task">任务类型<select id="task"><option value="auto">自动分派 · 客服协助代理判断</option><option value="travel_policy">旅行政策问答</option><option value="code_analysis">代码分析 · 调用代码分析器</option></select></label>
+        <div id="code-context" class="code-context" hidden><strong>子代理：代码分析器</strong><p><a href="https://github.com/osTicket/osTicket" target="_blank" rel="noopener">osTicket/osTicket ↗</a> · 只读静态分析</p><p id="repo-status" class="tiny">正在检查代码索引…</p><label for="file_path">指定文件（可选）</label><input id="file_path" maxlength="250" placeholder="例如 scp/login.php"><small>支持仓库结构、代码位置、函数声明与片段查看；不执行仓库代码。</small></div>
+        <label class="sr-only" for="question">咨询问题</label>
+        <textarea id="question" name="question" rows="5" minlength="2" maxlength="1500" required placeholder="例如：Peach 的手提行李有什么重量和件数限制？"></textarea>
+        <div class="input-meta"><span>请勿输入客户个人信息或密钥</span><span id="char-count">0 / 1500</span></div>
+        <div id="policy-context">
+        <div class="context-heading"><h3>适用条件</h3><span>退改问题请补充票价、原因和渠道</span></div>
+        <div class="context-grid">
+          <label>航空公司<select id="airline" name="airline"><option value="peach">Peach 乐桃航空</option value="">尚未确认</option><option value="other">其他航空公司（未收录）</option></select></label>
+          <label>票价类型<select id="fare_type" name="fare_type"><option value="">尚未确认</option><option value="minimum">Minimum</option><option value="standard">Standard</option><option value="standard_plus">Standard Plus</option></select></label>
+          <label>退改原因<select id="reason" name="reason"><option value="">尚未确认 / 不适用</option><option value="voluntary">个人原因 · 自愿退改</option><option value="involuntary">航班取消 / 延误 · 非自愿</option></select></label>
+          <label>购票渠道<select id="booking_channel" name="booking_channel"><option value="">尚未确认 / 不适用</option><option value="direct">航司官网</option><option value="agency">旅行社 / OTA</option></select></label>
+        </div>
+        </div>
+        <div class="submit-row"><span class="tiny">返回可追溯的处理结果</span><button id="submit" class="primary" type="submit">提交给客服协助代理 <span>↗</span></button></div>
+      </form>
+      <div class="examples-heading"><h2>从一个工作场景开始</h2><span class="tiny">点击填入问题</span></div>
+      <div class="examples">
+        <button type="button" class="example" data-example="baggage"><span class="example-icon">▣</span><span><strong>核对随身行李</strong><small>了解重量、尺寸与件数要求</small></span><span class="arrow">↗</span></button>
+        <button type="button" class="example" data-example="change"><span class="example-icon">⇄</span><span><strong>确认改签资格</strong><small>Standard Plus · 官网 · 个人原因</small></span><span class="arrow">↗</span></button>
+        <button type="button" class="example" data-example="cancel"><span class="example-icon">↶</span><span><strong>解释取消后的返还方式</strong><small>Standard · 官网 · 个人原因</small></span><span class="arrow">↗</span></button>
+        <button type="button" class="example" data-example="code_overview"><span class="example-icon">⌘</span><span><strong>分析 osTicket 仓库结构</strong><small>主代理 → 代码分析器 · 入口与目录</small></span><span class="arrow">↗</span></button>
+        <button type="button" class="example" data-example="code_login"><span class="example-icon">⌕</span><span><strong>定位员工登录代码</strong><small>文件、函数声明与代码行号</small></span><span class="arrow">↗</span></button>
+        <button type="button" class="example" data-example="code_api"><span class="example-icon">{ }</span><span><strong>查找 API 401 相关代码</strong><small>检索候选分支，核对代码证据</small></span><span class="arrow">↗</span></button>
+      </div>
+      <p class="scope-note">政策问答不覆盖订单操作或金额计算。代码分析仅定位静态证据，不执行代码或确认运行时根因。</p>
+    </div>
+    <section class="card result-card" aria-label="检索结果">
+      <div class="card-heading"><span class="step">02</span><h2>回答与证据</h2><span id="latency" class="tiny"></span></div>
+      <div class="result-tabs" role="tablist" aria-label="结果视图"><button id="tab-answer" role="tab" aria-selected="true" aria-controls="answer-view" class="selected" type="button">阅读视图</button><button id="tab-json" role="tab" aria-selected="false" aria-controls="json-view" type="button">结构化 JSON</button></div>
+      <div id="answer-view" role="tabpanel" aria-labelledby="tab-answer">
+        <div id="empty-state" class="empty-state"><div class="evidence-graphic" aria-hidden="true"><span class="paper">≡<i>✓</i></span><span class="orbit one"></span><span class="orbit two"></span></div><h3>先有依据，再有答案</h3><p>输入问题后，这里会显示回答状态、<br>政策或代码证据，以及代理调用记录。</p><div class="state-legend"><span><i class="legend-dot green"></i>有据可答</span><span><i class="legend-dot amber"></i>需要补充</span><span><i class="legend-dot gray"></i>证据不足</span></div></div>
+        <div id="result" class="result-content" hidden aria-live="polite" aria-atomic="true"></div>
+      </div>
+      <div id="json-view" role="tabpanel" aria-labelledby="tab-json" hidden><pre id="json-output">提交问题后显示 API 的原始响应。</pre></div>
+      <div class="result-footer"><span>◎</span> 可追溯引用 · 明确状态 · 适用条件检查</div>
+    </section>
+  </section>
+  <section id="library" hidden class="card library-card"><div class="card-heading"><span class="step">▤</span><h2>公开资料库</h2></div><p>仅保存精简中文摘要与来源元数据。核对日期不是政策生效日期；超过 30 天需人工复核。</p><div id="library-list"></div><p class="tiny" id="library-version"></p></section>
+  <footer class="page-footer"><span>基于公开资料构建 · 与 Peach、Adventure 或 skyticket 无隶属关系</span><span>LOCAL FIRST / EVIDENCE FIRST</span></footer>
+</main>
+</body>
+</html>

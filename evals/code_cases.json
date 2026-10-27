@@ -1,0 +1,177 @@
+[
+  {
+    "id": "overview",
+    "question": "分析 osTicket 的仓库结构和主要入口",
+    "expected_status": "answered",
+    "expected_reason": "code_evidence_found",
+    "required_files": [
+      "open.php",
+      "scp/login.php",
+      "api/http.php",
+      "include/class.ticket.php"
+    ]
+  },
+  {
+    "id": "staff-login",
+    "question": "osTicket 客服登录相关代码在哪里？",
+    "expected_status": "answered",
+    "expected_reason": "code_evidence_found",
+    "first_file": "scp/login.php"
+  },
+  {
+    "id": "ticket-create",
+    "question": "osTicket 工单创建逻辑在哪里？",
+    "expected_status": "answered",
+    "expected_reason": "code_evidence_found",
+    "first_file": "open.php"
+  },
+  {
+    "id": "api-401",
+    "question": "osTicket API 返回 401 时，应该查看哪些代码？",
+    "expected_status": "answered",
+    "expected_reason": "code_evidence_found",
+    "first_file": "include/class.api.php",
+    "all_sources_contain": "401",
+    "first_symbol": "requireApiKey",
+    "first_range": [
+      196,
+      205
+    ],
+    "first_context_kind": "complete_symbol"
+  },
+  {
+    "id": "symbol",
+    "question": "osTicket 的 requireApiKey 在哪里定义？",
+    "expected_status": "answered",
+    "expected_reason": "code_evidence_found",
+    "first_file": "include/class.api.php",
+    "first_symbol": "requireApiKey",
+    "first_range": [
+      196,
+      205
+    ],
+    "first_context_kind": "complete_symbol"
+  },
+  {
+    "id": "read-file",
+    "question": "查看 scp/login.php 的声明与入口",
+    "expected_status": "answered",
+    "expected_reason": "code_evidence_found",
+    "first_file": "scp/login.php"
+  },
+  {
+    "id": "read-readme",
+    "question": "分析 osTicket README.md",
+    "expected_status": "answered",
+    "expected_reason": "code_evidence_found",
+    "first_file": "README.md",
+    "first_context_kind": "line_window"
+  },
+  {
+    "id": "unknown-symbol",
+    "question": "osTicket FrobnicateMissingSymbol在哪里？",
+    "expected_status": "insufficient_evidence",
+    "expected_reason": "no_code_evidence"
+  },
+  {
+    "id": "vague-target",
+    "question": "分析 osTicket 源码",
+    "expected_status": "needs_clarification",
+    "expected_reason": "missing_code_target"
+  },
+  {
+    "id": "unindexed-file",
+    "question": "分析这个文件",
+    "file_path": "missing-does-not-exist.php",
+    "expected_status": "insufficient_evidence",
+    "expected_reason": "file_not_indexed"
+  },
+  {
+    "id": "outside-path",
+    "question": "读取文件",
+    "file_path": "../../.env",
+    "expected_status": "insufficient_evidence",
+    "expected_reason": "invalid_repository_path"
+  },
+  {
+    "id": "not-an-executor",
+    "question": "执行 osTicket 代码并修改仓库",
+    "expected_status": "insufficient_evidence",
+    "expected_reason": "read_only_analysis"
+  },
+  {
+    "id": "api401-paraphrase",
+    "question": "osTicket 的 API 报 401，鉴权检查在哪里？",
+    "first_file": "include/class.api.php",
+    "all_sources_contain": "401",
+    "first_symbol": "requireApiKey",
+    "first_range": [
+      196,
+      205
+    ],
+    "expected_status": "answered",
+    "expected_reason": "code_evidence_found"
+  },
+  {
+    "id": "api403",
+    "question": "osTicket API 403",
+    "first_file": "include/api.tickets.php",
+    "all_sources_contain": "403",
+    "first_symbol": "createTicket",
+    "first_range": [
+      138,
+      175
+    ],
+    "expected_status": "answered",
+    "expected_reason": "code_evidence_found"
+  },
+  {
+    "id": "api-key-accessor",
+    "question": "osTicket getApiKey 在哪定义？",
+    "first_file": "include/class.api.php",
+    "first_symbol": "getApiKey",
+    "first_range": [
+      192,
+      194
+    ],
+    "expected_status": "answered",
+    "expected_reason": "code_evidence_found"
+  },
+  {
+    "id": "remote-address-accessor",
+    "question": "osTicket getRemoteAddr",
+    "required_files": [
+      "include/api.cron.php",
+      "include/class.api.php"
+    ],
+    "first_symbol": "getRemoteAddr",
+    "expected_status": "answered",
+    "expected_reason": "code_evidence_found"
+  },
+  {
+    "id": "staff-login-paraphrase",
+    "question": "osTicket 员工登录入口如何定位？",
+    "first_file": "scp/login.php",
+    "expected_status": "answered",
+    "expected_reason": "code_evidence_found"
+  },
+  {
+    "id": "ticket-create-paraphrase",
+    "question": "osTicket 新建工单的代码入口在哪？",
+    "first_file": "open.php",
+    "expected_status": "answered",
+    "expected_reason": "code_evidence_found"
+  },
+  {
+    "id": "unknown-status",
+    "question": "osTicket API 599",
+    "expected_status": "insufficient_evidence",
+    "expected_reason": "no_code_evidence"
+  },
+  {
+    "id": "explicit-symbol-notfound",
+    "question": "osTicket NeverDefinedMethodXYZ",
+    "expected_status": "insufficient_evidence",
+    "expected_reason": "no_code_evidence"
+  }
+]
