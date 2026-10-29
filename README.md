@@ -10,7 +10,7 @@ An English-language assistant for customer support staff investigating osTicket 
 
 [Quickstart](docs/quickstart.md) · [Three-minute demo](docs/offline-demo.md) · [API contract](docs/api.md) · [Validation](docs/validation-v012.json)
 
-![Read-only checks with a continuing support conversation](docs/support-checks-v012.png)
+![Read-only checks with a continuing support conversation](docs/support-checks-redesign.png)
 
 ## The support workflow
 

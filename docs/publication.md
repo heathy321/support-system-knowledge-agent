@@ -37,7 +37,7 @@ The web UI (`app/static/`) was redesigned after the fresh setup above: typograph
 |---|---|
 | Unit/integration suite | 228 passed |
 | Browser walkthrough over real MCP, headless Chrome | 401 clarification → three checks (`checks_available`, `awaiting_reply`, `context_used=true`, `user_turns=2`) → engineering handoff with download; **New question** reset → user-reported resolution; document answer, unsupported-version boundary and combined document/code question |
-| Screenshot | `support-checks-v012.png` recaptured from the redesigned UI |
+| Screenshot | `support-checks-redesign.png` recaptured from the redesigned UI |
 
 Code-evidence excerpts render with font ligatures disabled, so `->` and `!=` are shown exactly as in the source.
 

@@ -54,4 +54,4 @@ The Gemini commands above are dry runs. They validate payloads without reading k
 
 The demo establishes task delegation, real MCP retrieval, source provenance, bounded context and explicit outcomes. It does not establish autonomous reasoning, semantic search, measured support-cost reductions, verified production fixes or production readiness.
 
-![Reviewed checks and reply context](support-checks-v012.png)
+![Reviewed checks and reply context](support-checks-redesign.png)
