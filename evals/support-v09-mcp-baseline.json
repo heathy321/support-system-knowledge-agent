@@ -1,0 +1,381 @@
+{
+  "app_version": "0.9.0",
+  "suite": "dev",
+  "backend": "mcp_stdio",
+  "cases_sha256": "d1cdcc38e9bd334f73ca612ede92f6449c66a74581e7c0079e410b3162facf4c",
+  "documentation": {
+    "corpus_version": "osticket-api-docs-1.17.7-2026-10-28-en-v2",
+    "corpus_sha256": "1367c43578107077cf192504bd84659ab9056b31aebf0b3d7b67ccca49e27875",
+    "document_version": "v1.17.7",
+    "reviewed_at": "2026-10-28",
+    "pages": 3,
+    "chunks": 6,
+    "code_version_relation": "unverified"
+  },
+  "code_commit": "8d38b0619649a50ee7cbbf37085f5d297fdc6f36",
+  "code_index_sha256": "676f40c4a68e3900e92676dab06fd3d89d08d97e6c1f616ab040b6078a738623",
+  "cases": 18,
+  "passed": 18,
+  "results": [
+    {
+      "id": "dev-01",
+      "status": "answered",
+      "mode": "documentation",
+      "reason": "document_evidence_found",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_citations": true,
+        "expected_code": true,
+        "citations": true,
+        "claims": true,
+        "bounded_answer": true,
+        "version_boundary": true
+      },
+      "citation_ids": [
+        "doc-auth"
+      ]
+    },
+    {
+      "id": "dev-02",
+      "status": "answered",
+      "mode": "documentation",
+      "reason": "document_evidence_found",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_citations": true,
+        "expected_code": true,
+        "citations": true,
+        "claims": true,
+        "bounded_answer": true,
+        "version_boundary": true
+      },
+      "citation_ids": [
+        "doc-key-setup"
+      ]
+    },
+    {
+      "id": "dev-03",
+      "status": "answered",
+      "mode": "documentation",
+      "reason": "document_evidence_found",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_citations": true,
+        "expected_code": true,
+        "citations": true,
+        "claims": true,
+        "bounded_answer": true,
+        "version_boundary": true
+      },
+      "citation_ids": [
+        "doc-fields"
+      ]
+    },
+    {
+      "id": "dev-04",
+      "status": "answered",
+      "mode": "documentation",
+      "reason": "document_evidence_found",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_citations": true,
+        "expected_code": true,
+        "citations": true,
+        "claims": true,
+        "bounded_answer": true,
+        "version_boundary": true
+      },
+      "citation_ids": [
+        "doc-endpoint"
+      ]
+    },
+    {
+      "id": "dev-05",
+      "status": "answered",
+      "mode": "documentation",
+      "reason": "document_evidence_found",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_citations": true,
+        "expected_code": true,
+        "citations": true,
+        "claims": true,
+        "bounded_answer": true,
+        "version_boundary": true
+      },
+      "citation_ids": [
+        "doc-response"
+      ]
+    },
+    {
+      "id": "dev-06",
+      "status": "answered",
+      "mode": "documentation",
+      "reason": "document_evidence_found",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_citations": true,
+        "expected_code": true,
+        "citations": true,
+        "claims": true,
+        "bounded_answer": true,
+        "version_boundary": true
+      },
+      "citation_ids": [
+        "doc-capabilities"
+      ]
+    },
+    {
+      "id": "dev-07",
+      "status": "answered",
+      "mode": "documentation",
+      "reason": "document_evidence_found",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_citations": true,
+        "expected_code": true,
+        "citations": true,
+        "claims": true,
+        "bounded_answer": true,
+        "version_boundary": true
+      },
+      "citation_ids": [
+        "doc-auth",
+        "doc-endpoint",
+        "doc-fields",
+        "doc-key-setup",
+        "doc-response"
+      ]
+    },
+    {
+      "id": "dev-08",
+      "status": "insufficient_evidence",
+      "mode": "documentation",
+      "reason": "document_topic_not_covered",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_citations": true,
+        "expected_code": true,
+        "citations": true,
+        "claims": true,
+        "bounded_answer": true,
+        "version_boundary": true
+      },
+      "citation_ids": []
+    },
+    {
+      "id": "dev-09",
+      "status": "insufficient_evidence",
+      "mode": "documentation",
+      "reason": "document_topic_not_covered",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_citations": true,
+        "expected_code": true,
+        "citations": true,
+        "claims": true,
+        "bounded_answer": true,
+        "version_boundary": true
+      },
+      "citation_ids": []
+    },
+    {
+      "id": "dev-10",
+      "status": "needs_clarification",
+      "mode": "documentation",
+      "reason": "missing_document_target",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_citations": true,
+        "expected_code": true,
+        "citations": true,
+        "claims": true,
+        "bounded_answer": true,
+        "version_boundary": true
+      },
+      "citation_ids": []
+    },
+    {
+      "id": "dev-11",
+      "status": "insufficient_evidence",
+      "mode": "combined",
+      "reason": "combined_incomplete",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_citations": true,
+        "expected_code": true,
+        "citations": true,
+        "claims": true,
+        "bounded_answer": true,
+        "version_boundary": true
+      },
+      "citation_ids": []
+    },
+    {
+      "id": "dev-12",
+      "status": "answered",
+      "mode": "combined",
+      "reason": "combined_evidence_found",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_citations": true,
+        "expected_code": true,
+        "citations": true,
+        "claims": true,
+        "bounded_answer": true,
+        "version_boundary": true
+      },
+      "citation_ids": [
+        "api/http.php:1-24",
+        "doc-auth",
+        "include/api.cron.php:6-12",
+        "include/api.tickets.php:1-24",
+        "include/class.api.php:1-24"
+      ]
+    },
+    {
+      "id": "dev-13",
+      "status": "answered",
+      "mode": "static_code_analysis",
+      "reason": "code_evidence_found",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_citations": true,
+        "expected_code": true,
+        "citations": true,
+        "claims": true,
+        "bounded_answer": true,
+        "version_boundary": true
+      },
+      "citation_ids": [
+        "include/api.cron.php:6-12",
+        "include/api.tickets.php:113-134",
+        "include/class.ajax.php:29-38",
+        "include/class.api.php:196-205"
+      ]
+    },
+    {
+      "id": "dev-14",
+      "status": "insufficient_evidence",
+      "mode": "documentation",
+      "reason": "document_version_not_covered",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_citations": true,
+        "expected_code": true,
+        "citations": true,
+        "claims": true,
+        "bounded_answer": true,
+        "version_boundary": true
+      },
+      "citation_ids": []
+    },
+    {
+      "id": "dev-15",
+      "status": "answered",
+      "mode": "documentation",
+      "reason": "document_evidence_found",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_citations": true,
+        "expected_code": true,
+        "citations": true,
+        "claims": true,
+        "bounded_answer": true,
+        "version_boundary": true
+      },
+      "citation_ids": [
+        "doc-fields"
+      ]
+    },
+    {
+      "id": "dev-16",
+      "status": "insufficient_evidence",
+      "mode": "documentation",
+      "reason": "document_topic_not_covered",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_citations": true,
+        "expected_code": true,
+        "citations": true,
+        "claims": true,
+        "bounded_answer": true,
+        "version_boundary": true
+      },
+      "citation_ids": []
+    },
+    {
+      "id": "regression-accept-01",
+      "status": "answered",
+      "mode": "documentation",
+      "reason": "document_evidence_found",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_citations": true,
+        "expected_code": true,
+        "citations": true,
+        "claims": true,
+        "bounded_answer": true,
+        "version_boundary": true
+      },
+      "citation_ids": [
+        "doc-fields"
+      ]
+    },
+    {
+      "id": "regression-accept-02",
+      "status": "answered",
+      "mode": "documentation",
+      "reason": "document_evidence_found",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "route": true,
+        "required_citations": true,
+        "expected_code": true,
+        "citations": true,
+        "claims": true,
+        "bounded_answer": true,
+        "version_boundary": true
+      },
+      "citation_ids": [
+        "doc-key-setup"
+      ]
+    }
+  ],
+  "limitations": "English adaptations of same-author development cases; not independent or blind evaluation. Inputs and corpus differ from pre-English reports, which remain archived. Exact summary identity does not measure semantic entailment."
+}

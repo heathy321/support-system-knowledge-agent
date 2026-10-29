@@ -1,0 +1,14 @@
+{
+  "app_version": "0.10.0",
+  "verified_at": "2026-10-29",
+  "tests": {"passed": 197, "failed": 0, "warning": "Existing Starlette TestClient/httpx deprecation"},
+  "support_regressions": {"backend": "mcp_stdio", "passed": 18, "cases": 18},
+  "code_regressions": {"backend": "mcp_stdio", "passed": 20, "cases": 20, "local_mcp_parity": "20/20"},
+  "gemini_dry_runs": {"cases": 3, "model_requests": 0},
+  "new_intent_router": {
+    "validation": "MockTransport tests through the shared Gemini transport",
+    "live_calls": 0,
+    "coverage": ["Targeted booking clarification", "Outside scope and uncovered topics", "Classification followed by retrieval and synthesis", "Original question and version guards preserved", "Unknown decisions and extra fields rejected", "Provider failures without retries", "Offline path without configuration reads", "Bare-error guard bypasses model"]
+  },
+  "limits": "Same-author tests, not a held-out semantic accuracy or prompt-injection benchmark. New live classifier behavior requires restarting the user's key-enabled server. A prior live synthesis smoke test does not validate this classifier. No billing entitlement is inferred."
+}

@@ -26,7 +26,7 @@ def run(backend="local"):
     parity_checks = []
     comparison = CustomerSupportAgent(code_analyzer=CodeAnalyzerAgent(backend="local")) if backend == "mcp_stdio" else None
     for case in cases:
-        response = agent.ask(AskRequest(question=case["question"], task="code_analysis", file_path=case.get("file_path")))
+        response = agent.ask(AskRequest(answer_mode="offline", question=case["question"], task="code_analysis", file_path=case.get("file_path")))
         paths = [source.file_path for source in response.sources]
         passed = response.status == case["expected_status"] and response.reason_code == case["expected_reason"]
         if case.get("first_file"):
@@ -52,11 +52,12 @@ def run(backend="local"):
                 passed = passed and response.sources[0].context_kind == case["first_context_kind"]
             ids = {source.chunk_id for source in response.sources}
             passed = passed and all(claim.citation_ids and set(claim.citation_ids) <= ids for claim in response.claims)
-        passed = passed and response.delegated_to == "代码分析器" and response.agent_trace[0].action == "delegate_code_analysis"
+        passed = passed and response.delegated_to == "Code Analyzer" and response.agent_trace[0].action == "delegate_code_analysis"
         if backend == "mcp_stdio":
             passed = passed and response.retrieval_backend == backend and any(s.action == "mcp.initialize+tools/list" for s in response.agent_trace)
-            local = comparison.ask(AskRequest(question=case["question"], task="code_analysis", file_path=case.get("file_path")))
-            exclude = {"latency_ms", "request_id", "agent_trace", "retrieval_backend"}
+            local = comparison.ask(AskRequest(answer_mode="offline", question=case["question"], task="code_analysis", file_path=case.get("file_path")))
+            exclude = {"latency_ms": True, "request_id": True, "agent_trace": True, "retrieval_backend": True,
+                       "handoff": {"request_id": True, "agent_trace": True}}
             parity = response.model_dump(exclude=exclude) == local.model_dump(exclude=exclude)
             parity_checks.append(parity)
             passed = passed and parity

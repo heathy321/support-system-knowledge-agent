@@ -1,0 +1,32 @@
+{
+  "app_version": "0.12.0",
+  "date": "2026-10-29",
+  "tests": {"passed": 228, "failed": 0},
+  "support_regressions": {"backend": "mcp_stdio", "passed": 18, "cases": 18},
+  "code_regressions": {"backend": "mcp_stdio", "passed": 20, "cases": 20, "local_mcp_parity": "20/20"},
+  "model_calls_for_this_change": 0,
+  "gemini_validation": "Mock transport verifies cited answer integration, retention of evidence required by checks, and no extra model call for outcome replies.",
+  "browser_validation": {
+    "server": "Isolated offline server with real MCP at localhost:8001; stopped after testing",
+    "passed": [
+      "Bare 401 asks for the workflow",
+      "API ticket-creation reply restores the original error and displays three cited read-only checks",
+      "Answered checks keep Send reply and pending context",
+      "Completed checks with a persistent error produce a downloadable handoff and close the context",
+      "New question clears the form and visible conversation",
+      "A full API creation 401 question enters the checks directly",
+      "It works now closes as user-reported resolution, without claiming verification"
+    ],
+    "console_errors": 0,
+    "screenshot": "docs/support-checks-v012.png",
+    "download_boundary": "Handoff content verified through API tests; browser download delivery was not exercised."
+  },
+  "other_checks": ["node --check app/static/app.js", "git diff --check"],
+  "limitations": [
+    "Reviewed checks cover one pinned osTicket API ticket-creation 401 workflow, not all support incidents.",
+    "Outcome parsing is deterministic and conservative, not a general language-understanding evaluation.",
+    "Self-authored regression cases are not a held-out benchmark.",
+    "No live Gemini request was made for this release; existing smoke tests do not establish general model quality.",
+    "No production system was inspected or changed. Resolution is user-reported only."
+  ]
+}

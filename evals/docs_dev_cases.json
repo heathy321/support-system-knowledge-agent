@@ -1,0 +1,188 @@
+[
+  {
+    "id": "dev-01",
+    "question": "What header does the API documentation require?",
+    "status": "answered",
+    "mode": "documentation",
+    "required": [
+      "doc-auth"
+    ],
+    "code": false,
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
+  },
+  {
+    "id": "dev-02",
+    "question": "How do I configure an API key?",
+    "status": "answered",
+    "mode": "documentation",
+    "required": [
+      "doc-key-setup"
+    ],
+    "code": false,
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
+  },
+  {
+    "id": "dev-03",
+    "question": "Which fields are required for API ticket creation?",
+    "status": "answered",
+    "mode": "documentation",
+    "required": [
+      "doc-fields"
+    ],
+    "code": false,
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
+  },
+  {
+    "id": "dev-04",
+    "question": "What is the API ticket creation endpoint?",
+    "status": "answered",
+    "mode": "documentation",
+    "required": [
+      "doc-endpoint"
+    ],
+    "code": false,
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
+  },
+  {
+    "id": "dev-05",
+    "question": "What response does successful ticket creation return in the API documentation?",
+    "status": "answered",
+    "mode": "documentation",
+    "required": [
+      "doc-response"
+    ],
+    "code": false,
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
+  },
+  {
+    "id": "dev-06",
+    "question": "Does the documentation support updating existing tickets?",
+    "status": "answered",
+    "mode": "documentation",
+    "required": [
+      "doc-capabilities"
+    ],
+    "code": false,
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
+  },
+  {
+    "id": "dev-07",
+    "question": "How do I create a ticket using the API?",
+    "status": "answered",
+    "mode": "documentation",
+    "required": [
+      "doc-key-setup",
+      "doc-auth",
+      "doc-endpoint",
+      "doc-fields",
+      "doc-response"
+    ],
+    "code": false,
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
+  },
+  {
+    "id": "dev-08",
+    "question": "What attachment size limits and required fields does the API documentation specify?",
+    "status": "insufficient_evidence",
+    "mode": "documentation",
+    "required": [],
+    "code": false,
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
+  },
+  {
+    "id": "dev-09",
+    "question": "How do I configure rate limits in the API documentation?",
+    "status": "insufficient_evidence",
+    "mode": "documentation",
+    "required": [],
+    "code": false,
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
+  },
+  {
+    "id": "dev-10",
+    "question": "Official API documentation",
+    "status": "needs_clarification",
+    "mode": "documentation",
+    "required": [],
+    "code": false,
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
+  },
+  {
+    "id": "dev-11",
+    "question": "Official API documentation about 401 diagnosis and related code",
+    "status": "insufficient_evidence",
+    "mode": "combined",
+    "required": [],
+    "code": false,
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
+  },
+  {
+    "id": "dev-12",
+    "question": "Official API header requirements and authentication code locations",
+    "status": "answered",
+    "mode": "combined",
+    "required": [
+      "doc-auth"
+    ],
+    "code": true,
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
+  },
+  {
+    "id": "dev-13",
+    "question": "Where is the API 401 code?",
+    "status": "answered",
+    "mode": "static_code_analysis",
+    "required": [],
+    "code": true,
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
+  },
+  {
+    "id": "dev-14",
+    "question": "What are the v2.0 API required fields?",
+    "status": "insufficient_evidence",
+    "mode": "documentation",
+    "required": [],
+    "code": false,
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
+  },
+  {
+    "id": "dev-15",
+    "question": "What are the v1.17.7 API required fields?",
+    "status": "answered",
+    "mode": "documentation",
+    "required": [
+      "doc-fields"
+    ],
+    "code": false,
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
+  },
+  {
+    "id": "dev-16",
+    "question": "How do I configure SMTP according to the official documentation?",
+    "status": "insufficient_evidence",
+    "mode": "documentation",
+    "required": [],
+    "code": false,
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
+  },
+  {
+    "id": "regression-accept-01",
+    "question": "What minimum information is required by the official API to create a ticket from an external system?",
+    "status": "answered",
+    "mode": "documentation",
+    "required": [
+      "doc-fields"
+    ],
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
+  },
+  {
+    "id": "regression-accept-02",
+    "question": "Which management page lets me add an osTicket API key?",
+    "status": "answered",
+    "mode": "documentation",
+    "required": [
+      "doc-key-setup"
+    ],
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
+  }
+]

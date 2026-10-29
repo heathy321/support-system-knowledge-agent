@@ -22,7 +22,7 @@ from app.mcp_contract import MAX_REPLY_BYTES, TOOLS, SearchFailure, ToolReply
 from app.models import AgentStep, AskResponse, CodeCitation, RepositoryInfo
 from app.retrieval import FileSummary
 
-logger = logging.getLogger("travel_ops")
+logger = logging.getLogger("support_system")
 
 
 def server_parameters(store):
@@ -66,7 +66,7 @@ class MCPGateway:
         self.digest = reply.index_sha256
         elapsed = round((perf_counter() - started) * 1000, 3)
         self.trace.append(AgentStep(agent="File Search MCP", action=f"mcp.tools/call:{name}",
-                                   detail=f"stdio · {elapsed} ms · 结构化结果 {len(serialized)} 字符（非 token 计数）"))
+                                   detail=f"stdio · {elapsed} ms · structured result: {len(serialized)} characters (not tokens)"))
         logger.info("mcp_tool=%s latency_ms=%s result_chars=%s", name, elapsed, len(serialized))
         return reply.data
 
@@ -149,14 +149,14 @@ async def with_gateway(store, operation, trace, timeout=25):
                             if not TOOLS <= {tool.name for tool in listed.tools}:
                                 raise SearchFailure("mcp_required_tool_missing")
                             trace.append(AgentStep(agent="File Search MCP", action="mcp.initialize+tools/list",
-                                                   detail=f"真实 stdio 会话；发现并允许 {len(TOOLS)} 个只读工具；尝试 {attempt + 1}"))
+                                                   detail=f"Real stdio session; discovered and allowed {len(TOOLS)} read-only tools; attempt {attempt + 1}"))
                             gateway = MCPGateway(session, expected, trace)
                             return await anyio.to_thread.run_sync(partial(operation, gateway))
                 except Exception as exc:
                     failure = classify(exc)
                     if not failure.retryable or attempt == 1:
                         raise failure from exc
-                    trace.append(AgentStep(agent="File Search MCP", action="mcp.retry", detail="连接故障；重新建立只读会话一次"))
+                    trace.append(AgentStep(agent="File Search MCP", action="mcp.retry", detail="Transport failure; reconnect the read-only session once"))
                     await anyio.sleep(0.1)
     except Exception as exc:
         raise classify(exc) from exc
@@ -168,13 +168,13 @@ def run_analysis(agent, task):
         result = anyio.run(with_gateway, agent.store, partial(agent._run, task), trace)
         # _run has a legacy local-index handler. Preserve the distinction for MCP.
         if result.reason_code == "repository_index_unavailable":
-            result.message = "File Search MCP 无法读取固定版本索引，请运行 python -m scripts.index_repository。"
+            result.message = "File Search MCP cannot read the pinned index. Run python -m scripts.index_repository."
     except SearchFailure as exc:
         trace.append(AgentStep(agent="File Search MCP", action="mcp.error", detail=f"{exc.error_type} · retryable={exc.retryable}"))
         result = AskResponse(status="upstream_error", reason_code=exc.error_type,
-                             message="File Search MCP 调用失败；请检查依赖、索引及服务日志。未将工具故障当作检索无结果。",
+                             message="File Search MCP failed. Check dependencies, index and service logs. A tool failure is not an empty search result.",
                              mode="static_code_analysis", delegated_to=agent.name,
-                             scope="osTicket 固定提交的静态代码检索。", retryable=exc.retryable, agent_trace=trace)
+                             scope="Static code retrieval at the pinned osTicket commit.", retryable=exc.retryable, agent_trace=trace)
     result.retrieval_backend = "mcp_stdio"
     return result
 

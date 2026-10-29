@@ -1,0 +1,16 @@
+{
+  "app_version": "0.9.0",
+  "verified_at": "2026-10-28",
+  "tests": {"passed": 168, "failed": 0, "warnings": "Existing Starlette TestClient/httpx deprecation"},
+  "support_regressions": {"backend": "mcp_stdio", "passed": 18, "cases": 18},
+  "code_regressions": {"backend": "mcp_stdio", "passed": 20, "cases": 20, "local_mcp_parity": "20/20", "citation_integrity": "40/40"},
+  "gemini": {"dry_runs": 3, "live_requests": 0, "account_free_tier": "not_verified", "live_quality": "not_evaluated"},
+  "ui": {
+    "question_only_document_request": "verified in local browser",
+    "login_question": "verified through real MCP; first source login.php",
+    "engineering_handoff": "contents verified through API; control rendered in browser",
+    "screenshot": "support-workspace-v09.png"
+  },
+  "launcher": "PowerShell syntax parsed; real key input and provider connectivity require user setup",
+  "limitations": "Same-author regression tests, not a held-out benchmark. Citation checks do not prove semantic correctness. Free-tier entitlement cannot be verified from configuration. Code-location success does not establish incident resolution. No live model request was made."
+}

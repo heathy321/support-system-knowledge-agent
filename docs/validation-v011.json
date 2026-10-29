@@ -1,0 +1,11 @@
+{
+  "app_version": "0.11.0",
+  "verified_at": "2026-10-29",
+  "tests": {"passed": 210, "failed": 0, "warning": "Existing Starlette TestClient/httpx deprecation"},
+  "support_regressions": {"backend": "mcp_stdio", "passed": 18, "cases": 18},
+  "code_regressions": {"backend": "mcp_stdio", "passed": 20, "cases": 20, "local_mcp_parity": "20/20"},
+  "conversation_tests": ["Original error retained in API follow-up", "Original version guard retained", "Session isolation and token rotation", "Assistant options excluded from lexical retrieval", "Expiration and reset", "Mocked Gemini clarification and synthesis context", "Failure recovery without duplicate replies", "Immutable request options", "Turn and character limits", "Capacity without eviction", "Concurrent replies and reset during processing"],
+  "browser": {"environment": "Isolated offline server at 127.0.0.1:8001 with real MCP", "original_question": "it occurs a 401 error", "reply": "when creating a ticket through the API", "context_used": true, "user_turns": 2, "first_source": "include/class.api.php", "new_question_reset": "Verified", "screenshot": "clarification-context-v011.png"},
+  "live_model_requests_for_this_change": 0,
+  "limits": "Short-term pending clarification context, not persistent chat history. Single worker, local unauthenticated demo. Browser refresh loses its reference; process restart clears server memory. Same-author regressions are not a held-out answer-quality benchmark. Gemini multi-turn payloads were mock-tested, not evaluated live."
+}

@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "corpus_version": "osticket-api-docs-1.17.7-2026-10-28-en-v2",
+  "document_version": "v1.17.7",
+  "reviewed_at": "2026-10-28",
+  "sources": [
+    {
+      "id": "api",
+      "title": "API — osTicket 1.17.7 documentation",
+      "url": "https://docs.osticket.com/en/v1.17.7/Developer%20Documentation/API%20Docs.html",
+      "document_version": "v1.17.7",
+      "fetched_at": "2026-10-27T15:50:49.666421+00:00",
+      "reviewed_at": "2026-10-28",
+      "source_sha256": "4fee04b0fd0c4cfa2628c8d2b7e3afe97691fd0b2875696a39ac891f15232916"
+    },
+    {
+      "id": "tickets",
+      "title": "Tickets — osTicket 1.17.7 documentation",
+      "url": "https://docs.osticket.com/en/v1.17.7/Developer%20Documentation/API/Tickets.html",
+      "document_version": "v1.17.7",
+      "fetched_at": "2026-10-27T15:50:50.630375+00:00",
+      "reviewed_at": "2026-10-28",
+      "source_sha256": "a96960c2c7e5d14eb4478f66f55dc269568289fa4bb39902a90bd327e21c7e2e"
+    },
+    {
+      "id": "keys",
+      "title": "API Keys — osTicket 1.17.7 documentation",
+      "url": "https://docs.osticket.com/en/v1.17.7/Admin/Manage/API%20Keys.html",
+      "document_version": "v1.17.7",
+      "fetched_at": "2026-10-27T15:50:51.570416+00:00",
+      "reviewed_at": "2026-10-28",
+      "source_sha256": "77d743993e54d924bedbf3e0b7574ec66c5613314c78a83b0b854e0518a54ee7"
+    }
+  ],
+  "chunks": [
+    {
+      "id": "doc-auth",
+      "source_id": "api",
+      "section": "HTTP Access",
+      "summary": "For HTTP API calls, supply the key in the X-API-Key header. The official documentation requires the source IP associated with the key to match the requesting client IP. This summary does not diagnose an actual failed request."
+    },
+    {
+      "id": "doc-key-setup",
+      "source_id": "keys",
+      "section": "Adding/Enabling/Disabling/Deleting an API Key",
+      "summary": "In the Admin Panel, go to Manage > API Keys, add a key, set its enabled state and the calling server IP, and enable the Ticket Creation service as needed. These are configuration instructions; this assistant does not create or modify keys."
+    },
+    {
+      "id": "doc-endpoint",
+      "source_id": "tickets",
+      "section": "Create a Ticket",
+      "summary": "Create a ticket with HTTP POST. Select api/tickets.json, api/tickets.xml or api/tickets.email according to the request format. These paths are relative to the osTicket installation."
+    },
+    {
+      "id": "doc-fields",
+      "source_id": "tickets",
+      "section": "Create a Ticket / Fields",
+      "summary": "The documented base required fields are email, name, subject and message: the requester email, requester name, ticket subject and initial message. Custom forms may change the actual field requirements; check the deployed configuration separately."
+    },
+    {
+      "id": "doc-response",
+      "source_id": "tickets",
+      "section": "Create a Ticket / Response",
+      "summary": "In this documentation version, successful creation returns HTTP 201 and the external number of the new ticket. Failures return an HTTP status and error description. This summary does not map every error to a specific status code."
+    },
+    {
+      "id": "doc-capabilities",
+      "source_id": "tickets",
+      "section": "Tickets",
+      "summary": "This documentation version limits the ticket API to creation; updating or deleting existing tickets is not supported. This does not establish the capabilities of other versions or third-party extensions."
+    }
+  ]
+}

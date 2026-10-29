@@ -1,7 +1,7 @@
 [
   {
     "id": "overview",
-    "question": "分析 osTicket 的仓库结构和主要入口",
+    "question": "Analyze the osTicket repository structure and main entry points",
     "expected_status": "answered",
     "expected_reason": "code_evidence_found",
     "required_files": [
@@ -9,25 +9,28 @@
       "scp/login.php",
       "api/http.php",
       "include/class.ticket.php"
-    ]
+    ],
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
   },
   {
     "id": "staff-login",
-    "question": "osTicket 客服登录相关代码在哪里？",
+    "question": "Where is the osTicket support staff login code?",
     "expected_status": "answered",
     "expected_reason": "code_evidence_found",
-    "first_file": "scp/login.php"
+    "first_file": "scp/login.php",
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
   },
   {
     "id": "ticket-create",
-    "question": "osTicket 工单创建逻辑在哪里？",
+    "question": "Where is the osTicket ticket creation logic?",
     "expected_status": "answered",
     "expected_reason": "code_evidence_found",
-    "first_file": "open.php"
+    "first_file": "open.php",
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
   },
   {
     "id": "api-401",
-    "question": "osTicket API 返回 401 时，应该查看哪些代码？",
+    "question": "Which code should I inspect when the osTicket API returns 401?",
     "expected_status": "answered",
     "expected_reason": "code_evidence_found",
     "first_file": "include/class.api.php",
@@ -37,11 +40,12 @@
       196,
       205
     ],
-    "first_context_kind": "complete_symbol"
+    "first_context_kind": "complete_symbol",
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
   },
   {
     "id": "symbol",
-    "question": "osTicket 的 requireApiKey 在哪里定义？",
+    "question": "Where is osTicket requireApiKey defined?",
     "expected_status": "answered",
     "expected_reason": "code_evidence_found",
     "first_file": "include/class.api.php",
@@ -50,58 +54,66 @@
       196,
       205
     ],
-    "first_context_kind": "complete_symbol"
+    "first_context_kind": "complete_symbol",
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
   },
   {
     "id": "read-file",
-    "question": "查看 scp/login.php 的声明与入口",
+    "question": "Inspect declarations and entry points in scp/login.php",
     "expected_status": "answered",
     "expected_reason": "code_evidence_found",
-    "first_file": "scp/login.php"
+    "first_file": "scp/login.php",
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
   },
   {
     "id": "read-readme",
-    "question": "分析 osTicket README.md",
+    "question": "Analyze osTicket README.md",
     "expected_status": "answered",
     "expected_reason": "code_evidence_found",
     "first_file": "README.md",
-    "first_context_kind": "line_window"
+    "first_context_kind": "line_window",
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
   },
   {
     "id": "unknown-symbol",
-    "question": "osTicket FrobnicateMissingSymbol在哪里？",
+    "question": "Where is osTicket FrobnicateMissingSymbol defined?",
     "expected_status": "insufficient_evidence",
-    "expected_reason": "no_code_evidence"
+    "expected_reason": "no_code_evidence",
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
   },
   {
     "id": "vague-target",
-    "question": "分析 osTicket 源码",
+    "question": "Analyze the osTicket source code",
     "expected_status": "needs_clarification",
-    "expected_reason": "missing_code_target"
+    "expected_reason": "missing_code_target",
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
   },
   {
     "id": "unindexed-file",
-    "question": "分析这个文件",
+    "question": "Analyze this file",
     "file_path": "missing-does-not-exist.php",
     "expected_status": "insufficient_evidence",
-    "expected_reason": "file_not_indexed"
+    "expected_reason": "file_not_indexed",
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
   },
   {
     "id": "outside-path",
-    "question": "读取文件",
+    "question": "Read a file",
     "file_path": "../../.env",
     "expected_status": "insufficient_evidence",
-    "expected_reason": "invalid_repository_path"
+    "expected_reason": "invalid_repository_path",
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
   },
   {
     "id": "not-an-executor",
-    "question": "执行 osTicket 代码并修改仓库",
+    "question": "Execute osTicket code and modify the repository",
     "expected_status": "insufficient_evidence",
-    "expected_reason": "read_only_analysis"
+    "expected_reason": "read_only_analysis",
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
   },
   {
     "id": "api401-paraphrase",
-    "question": "osTicket 的 API 报 401，鉴权检查在哪里？",
+    "question": "The osTicket API reports 401. Where is the authentication check?",
     "first_file": "include/class.api.php",
     "all_sources_contain": "401",
     "first_symbol": "requireApiKey",
@@ -110,7 +122,8 @@
       205
     ],
     "expected_status": "answered",
-    "expected_reason": "code_evidence_found"
+    "expected_reason": "code_evidence_found",
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
   },
   {
     "id": "api403",
@@ -123,11 +136,12 @@
       175
     ],
     "expected_status": "answered",
-    "expected_reason": "code_evidence_found"
+    "expected_reason": "code_evidence_found",
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
   },
   {
     "id": "api-key-accessor",
-    "question": "osTicket getApiKey 在哪定义？",
+    "question": "Where is osTicket getApiKey defined?",
     "first_file": "include/class.api.php",
     "first_symbol": "getApiKey",
     "first_range": [
@@ -135,7 +149,8 @@
       194
     ],
     "expected_status": "answered",
-    "expected_reason": "code_evidence_found"
+    "expected_reason": "code_evidence_found",
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
   },
   {
     "id": "remote-address-accessor",
@@ -146,32 +161,37 @@
     ],
     "first_symbol": "getRemoteAddr",
     "expected_status": "answered",
-    "expected_reason": "code_evidence_found"
+    "expected_reason": "code_evidence_found",
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
   },
   {
     "id": "staff-login-paraphrase",
-    "question": "osTicket 员工登录入口如何定位？",
+    "question": "Locate the osTicket employee login entry point",
     "first_file": "scp/login.php",
     "expected_status": "answered",
-    "expected_reason": "code_evidence_found"
+    "expected_reason": "code_evidence_found",
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
   },
   {
     "id": "ticket-create-paraphrase",
-    "question": "osTicket 新建工单的代码入口在哪？",
+    "question": "Where is the code entry point for creating a new osTicket ticket?",
     "first_file": "open.php",
     "expected_status": "answered",
-    "expected_reason": "code_evidence_found"
+    "expected_reason": "code_evidence_found",
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
   },
   {
     "id": "unknown-status",
     "question": "osTicket API 599",
     "expected_status": "insufficient_evidence",
-    "expected_reason": "no_code_evidence"
+    "expected_reason": "no_code_evidence",
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
   },
   {
     "id": "explicit-symbol-notfound",
     "question": "osTicket NeverDefinedMethodXYZ",
     "expected_status": "insufficient_evidence",
-    "expected_reason": "no_code_evidence"
+    "expected_reason": "no_code_evidence",
+    "origin": "English adaptation of a pre-v0.8 development case; not held-out evaluation"
   }
 ]

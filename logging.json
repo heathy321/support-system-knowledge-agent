@@ -4,7 +4,7 @@
   "formatters": {"default": {"format": "%(asctime)s %(levelname)s %(name)s %(message)s"}},
   "handlers": {"console": {"class": "logging.StreamHandler", "formatter": "default", "stream": "ext://sys.stdout"}},
   "loggers": {
-    "travel_ops": {"handlers": ["console"], "level": "INFO", "propagate": false},
+    "support_system": {"handlers": ["console"], "level": "INFO", "propagate": false},
     "uvicorn": {"handlers": ["console"], "level": "INFO", "propagate": false},
     "uvicorn.access": {"handlers": ["console"], "level": "WARNING", "propagate": false}
   }

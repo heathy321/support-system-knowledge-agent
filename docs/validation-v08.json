@@ -1,0 +1,61 @@
+{
+  "app_version": "0.8.0",
+  "date": "2026-10-28",
+  "language": "English",
+  "unit_and_integration_tests": {
+    "passed": 155,
+    "warnings": 1,
+    "warning": "Existing Starlette TestClient/httpx deprecation"
+  },
+  "support_development": {
+    "cases": 18,
+    "passed": 18,
+    "cases_sha256": "d1cdcc38e9bd334f73ca612ede92f6449c66a74581e7c0079e410b3162facf4c",
+    "documentation": {
+      "corpus_version": "osticket-api-docs-1.17.7-2026-10-28-en-v2",
+      "corpus_sha256": "1367c43578107077cf192504bd84659ab9056b31aebf0b3d7b67ccca49e27875",
+      "document_version": "v1.17.7",
+      "reviewed_at": "2026-10-28",
+      "pages": 3,
+      "chunks": 6,
+      "code_version_relation": "unverified"
+    }
+  },
+  "code_development": {
+    "cases": 20,
+    "passed": 20,
+    "cases_sha256": "45e3a4bb94eee720141ed6d8a1ab65dc16d8a736cf4fc32acf71f059df5eff9d",
+    "backend_parity": {
+      "passed": 20,
+      "total": 20
+    },
+    "commit_sha": "8d38b0619649a50ee7cbbf37085f5d297fdc6f36",
+    "index_sha256": "676f40c4a68e3900e92676dab06fd3d89d08d97e6c1f616ab040b6078a738623"
+  },
+  "gemini": {
+    "live_requests": 0,
+    "dry_run_cases": 3,
+    "semantic_quality": "not_evaluated"
+  },
+  "fresh_setup": {
+    "new_virtual_environment": true,
+    "locked_dependency_install": "passed",
+    "pip_check": "passed",
+    "tests_passed": 155,
+    "index_files": 755,
+    "mcp_smoke": "passed",
+    "gemini_dry_run_cases": 3,
+    "repository_source": "Independent local clone of existing public osTicket Git objects; a fresh GitHub network download was not tested"
+  },
+  "historical_archive_sha256": "089cf967dc864e6d48aaca6f781ded8f832f411f9ac85a6aed5b82688f946945",
+  "limitations": "Same-author English development adaptations, not held-out or directly comparable to previous Chinese suites. No real Gemini or live answer-quality evaluation. Original third-party excerpts are not translated.",
+  "publish_preflight": {
+    "common_credential_pattern_findings": 0,
+    "excluded_directories": [
+      ".venv/",
+      "data/"
+    ],
+    "env_template_only": true,
+    "note": "Heuristic check, not a guarantee that all possible secrets are detectable."
+  }
+}

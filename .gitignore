@@ -13,3 +13,7 @@ evals/code-mcp-latest.json
 dist/
 build/
 data/
+
+evals/docs-local-latest.json
+evals/docs-mcp_stdio-latest.json
+evals/gemini-live-latest.json

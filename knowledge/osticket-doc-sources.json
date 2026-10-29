@@ -1,0 +1,29 @@
+[
+  {
+    "id": "api",
+    "title": "API — osTicket 1.17.7 documentation",
+    "url": "https://docs.osticket.com/en/v1.17.7/Developer%20Documentation/API%20Docs.html",
+    "document_version": "v1.17.7",
+    "fetched_at": "2026-10-27T15:50:49.666421+00:00",
+    "reviewed_at": "2026-10-28",
+    "source_sha256": "4fee04b0fd0c4cfa2628c8d2b7e3afe97691fd0b2875696a39ac891f15232916"
+  },
+  {
+    "id": "tickets",
+    "title": "Tickets — osTicket 1.17.7 documentation",
+    "url": "https://docs.osticket.com/en/v1.17.7/Developer%20Documentation/API/Tickets.html",
+    "document_version": "v1.17.7",
+    "fetched_at": "2026-10-27T15:50:50.630375+00:00",
+    "reviewed_at": "2026-10-28",
+    "source_sha256": "a96960c2c7e5d14eb4478f66f55dc269568289fa4bb39902a90bd327e21c7e2e"
+  },
+  {
+    "id": "keys",
+    "title": "API Keys — osTicket 1.17.7 documentation",
+    "url": "https://docs.osticket.com/en/v1.17.7/Admin/Manage/API%20Keys.html",
+    "document_version": "v1.17.7",
+    "fetched_at": "2026-10-27T15:50:51.570416+00:00",
+    "reviewed_at": "2026-10-28",
+    "source_sha256": "77d743993e54d924bedbf3e0b7574ec66c5613314c78a83b0b854e0518a54ee7"
+  }
+]
