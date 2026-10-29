@@ -1,6 +1,6 @@
 # Publication preparation — v0.12.0
 
-Checked on 2026-10-29. This record describes local preparation for publishing the source repository. No GitHub repository was created, no commit or push was made, and no application was deployed during this preparation.
+Checked on 2026-10-29. This record describes local preparation and the subsequent publication of the source repository to [heathy321/support-system-knowledge-agent](https://github.com/heathy321/support-system-knowledge-agent). No application was deployed; publishing the source does not host a server.
 
 ## Reviewer entry points
 
@@ -27,7 +27,19 @@ An independent copy of the candidate source files was created under ignored `dat
 | Start actual Uvicorn server | Passed on an isolated localhost port; test process stopped afterward |
 | HTTP health and support workflow | v0.12.0 health passed; 401 clarification → three checks → engineering handoff passed through real MCP |
 
-Logs and generated results stay inside ignored `data/`. The user-facing server on port 8000 was not restarted. Linux/macOS instructions are supplied but were not executed in this Windows check. The Ubuntu GitHub Actions workflow is configured; no remote CI run has been observed yet.
+Logs and generated results stay inside ignored `data/`. The user-facing server on port 8000 was not restarted. Linux/macOS instructions are supplied but were not executed in this Windows check. The Ubuntu GitHub Actions test workflow later passed on the published commit (see [Publication](#publication)); that covers the automated tests, not a manual Linux walkthrough.
+
+## Frontend redesign after the fresh setup
+
+The web UI (`app/static/`) was redesigned after the fresh setup above: typography, palette, motion and interaction polish. API endpoints, agent logic, retrieval and response contracts were not changed, and every label referenced by the walkthrough is still present. Re-checked in the application's own environment:
+
+| Check | Result |
+|---|---|
+| Unit/integration suite | 228 passed |
+| Browser walkthrough over real MCP, headless Chrome | 401 clarification → three checks (`checks_available`, `awaiting_reply`, `context_used=true`, `user_turns=2`) → engineering handoff with download; **New question** reset → user-reported resolution; document answer, unsupported-version boundary and combined document/code question |
+| Screenshot | `support-checks-v012.png` recaptured from the redesigned UI |
+
+Code-evidence excerpts render with font ligatures disabled, so `->` and `!=` are shown exactly as in the source.
 
 ## Candidate file and history checks
 
@@ -41,11 +53,14 @@ The candidate file set excludes `.venv/`, `data/`, `.env` and server logs. `.env
 
 Historical artifacts remain preserved, with their earlier languages, case sets and limitations. They are not relabeled as current English benchmark results.
 
-## Decisions before publishing
+## Publication
 
-1. Choose the GitHub repository name and visibility. `support-system-knowledge-agent` matches the current project name; the existing local directory can keep its historical name.
-2. Choose a reuse license for the original implementation. No project license has been added on the owner's behalf; upstream material retains its own notices.
-3. Review the full pending diff, including intentional removal of the former travel-policy demo and addition of the English osTicket implementation. Those changes predate this documentation pass and must not be mistaken for newly introduced deletions.
-4. Create the remote repository, commit the reviewed files and push. Confirm the first GitHub Actions run before displaying a passing CI badge or claiming Linux validation.
+| Item | Status |
+|---|---|
+| Repository | Public: [heathy321/support-system-knowledge-agent](https://github.com/heathy321/support-system-knowledge-agent); the local directory keeps its historical name |
+| First published commit | `d012441` on `main`, following the preserved v0.4 commit. It includes the intentional removal of the former travel-policy demo and the English osTicket implementation |
+| Pre-push check | 88 changed files scanned for common credential patterns and files over 1 MB; no findings |
+| GitHub Actions | `tests` workflow passed on `d012441` (Ubuntu) |
+| License | Deliberately not added. The original code is public for review without a reuse license; upstream material retains its own notices |
 
 No credential is required to run the offline demo. Publishing source code is separate from hosting a server; this release remains a localhost demo without authentication or a shared session store.

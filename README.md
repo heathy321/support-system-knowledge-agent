@@ -4,6 +4,8 @@ An English-language assistant for customer support staff investigating osTicket 
 
 **Run the complete offline demo without a model key.** Optional Gemini adapters add intent classification and evidence-based answer synthesis. The project demonstrates a support workflow, real MCP integration and explicit failure handling; it cannot inspect or modify a live osTicket installation.
 
+[![tests](https://github.com/heathy321/support-system-knowledge-agent/actions/workflows/tests.yml/badge.svg)](https://github.com/heathy321/support-system-knowledge-agent/actions/workflows/tests.yml)
+
 **Current version: v0.12.0** · Python 3.12 · FastAPI · MCP over stdio · Optional Gemini
 
 [Quickstart](docs/quickstart.md) · [Three-minute demo](docs/offline-demo.md) · [API contract](docs/api.md) · [Validation](docs/validation-v012.json)
@@ -40,7 +42,7 @@ $env:CODE_SEARCH_BACKEND = 'mcp_stdio'
 .\.venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --log-config logging.json
 ```
 
-Open [the workspace](http://127.0.0.1:8000/) or [interactive API docs](http://127.0.0.1:8000/docs). The UI footer and `/health` show v0.12.0. If dependencies and the index already exist, only start the server. Do not clone over an existing directory. [Linux/macOS commands and troubleshooting](docs/quickstart.md) are also provided.
+Open [the workspace](http://127.0.0.1:8000/) or [interactive API docs](http://127.0.0.1:8000/docs). The sidebar footer and `/health` show v0.12.0. If dependencies and the index already exist, only start the server. Do not clone over an existing directory. [Linux/macOS commands and troubleshooting](docs/quickstart.md) are also provided.
 
 The indexer reads Git blobs at commit `8d38b0619649a50ee7cbbf37085f5d297fdc6f36`, never executes osTicket, and does not depend on its working-tree checkout. The snapshot contains 755 indexed files; vendor, binary and oversized content is excluded. The external clone and generated index live under ignored `data/`. The local folder may retain the historical name `travel-ops-knowledge-agent`.
 
@@ -107,7 +109,8 @@ See [setup, opt-in live testing and failure behavior](docs/gemini.md). Limited l
 | Unit and integration tests | 228 passed |
 | Support development regressions, real MCP | 18/18 |
 | Code development regressions, real MCP | 20/20, including local/MCP parity |
-| Offline browser walkthrough | Clarification, checks, handoff, reset and user-reported closure verified |
+| Offline browser walkthrough | Clarification, checks, handoff, reset and user-reported closure verified in the redesigned UI |
+| GitHub Actions (Ubuntu) | Test workflow passed on the first published commit |
 | Gemini for v0.12 changes | Mocked integration; zero live model calls for this release |
 
 See the [v0.12 validation record](docs/validation-v012.json) and [publication preparation record](docs/publication.md). These are self-authored development regressions, not held-out accuracy benchmarks. Citation-ID validation does not prove semantic support. Earlier results remain in the [project history](docs/history.md).
@@ -127,4 +130,4 @@ Unit tests use synthetic fixtures and mocked Gemini transport; no key is require
 - **Memory:** one process, up to 128 pending conversations, 15 minutes of inactivity, four user turns and 6,000 composed user characters. Refresh loses the browser reference; restart clears server memory. Use **New question** to change topics.
 - **Deployment:** a local portfolio demo with no authentication, shared session store or production hosting. Publishing the repository does not deploy the application.
 
-This project is independent of osTicket and any travel company. Public source ownership and attribution are documented in [Third-party notices](THIRD_PARTY_NOTICES.md). A reuse license for this project's original code has not yet been selected.
+This project is independent of osTicket and any travel company. Public source ownership and attribution are documented in [Third-party notices](THIRD_PARTY_NOTICES.md). No license file is included: the source is public for review, but no reuse license is currently granted for this project's original code.
