@@ -10,7 +10,7 @@ An English-language assistant for customer support staff investigating osTicket 
 
 [Quickstart](docs/quickstart.md) · [Three-minute demo](docs/offline-demo.md) · [API contract](docs/api.md) · [Validation](docs/validation-v012.json)
 
-![Read-only checks with a continuing support conversation](docs/support-checks-redesign.png)
+![Read-only checks with a continuing support conversation](docs/support-workspace.png)
 
 ## The support workflow
 
@@ -42,7 +42,7 @@ $env:CODE_SEARCH_BACKEND = 'mcp_stdio'
 .\.venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --log-config logging.json
 ```
 
-Open [the workspace](http://127.0.0.1:8000/) or [interactive API docs](http://127.0.0.1:8000/docs). The sidebar footer and `/health` show v0.12.0. If dependencies and the index already exist, only start the server. Do not clone over an existing directory. [Linux/macOS commands and troubleshooting](docs/quickstart.md) are also provided.
+Open [the workspace](http://127.0.0.1:8000/) or [interactive API docs](http://127.0.0.1:8000/docs). The footer and `/health` show v0.12.0. If dependencies and the index already exist, only start the server. Do not clone over an existing directory. [Linux/macOS commands and troubleshooting](docs/quickstart.md) are also provided.
 
 The indexer reads Git blobs at commit `8d38b0619649a50ee7cbbf37085f5d297fdc6f36`, never executes osTicket, and does not depend on its working-tree checkout. The snapshot contains 755 indexed files; vendor, binary and oversized content is excluded. The external clone and generated index live under ignored `data/`. The local folder may retain the historical name `travel-ops-knowledge-agent`.
 

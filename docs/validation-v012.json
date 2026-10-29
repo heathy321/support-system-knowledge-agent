@@ -18,7 +18,7 @@
       "It works now closes as user-reported resolution, without claiming verification"
     ],
     "console_errors": 0,
-    "screenshot": "docs/support-checks-redesign.png",
+    "screenshot": "docs/support-workspace.png",
     "download_boundary": "Handoff content verified through API tests; browser download delivery was not exercised."
   },
   "other_checks": ["node --check app/static/app.js", "git diff --check"],

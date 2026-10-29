@@ -24,7 +24,7 @@ $("new-question").addEventListener("click", async () => {
   delete document.querySelector(".result-card").dataset.status;
   $("json-output").textContent = "Submit a question to view the raw API response.";
   switchView(false); question.focus();
-  $("submit").textContent = "Get answer ↗";
+  $("submit").textContent = "Get answer";
   if (oldId) {
     try {
       const response = await fetch("/conversation/reset", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({clarification_id: oldId}), signal: AbortSignal.timeout(5000)});
@@ -43,19 +43,16 @@ function node(tag, text, className) {
 }
 function count() {
   $("char-count").textContent = `${question.value.length} / 1500`;
-  const meta = document.querySelector(".input-meta");
-  meta.style.setProperty("--fill", String(question.value.length / 1500));
-  meta.classList.toggle("near-limit", question.value.length > 1350);
+  document.querySelector(".input-meta").classList.toggle("near-limit", question.value.length > 1350);
 }
 question.addEventListener("input", count);
 question.addEventListener("keydown", event => {
   if (event.key === "Enter" && (event.ctrlKey || event.metaKey)) {event.preventDefault(); form.requestSubmit();}
 });
-// Pointer-tracked highlight on cards (purely visual).
-document.querySelectorAll(".card").forEach(card => card.addEventListener("pointermove", event => {
-  const box = card.getBoundingClientRect();
-  card.style.setProperty("--mx", `${event.clientX - box.left}px`);
-  card.style.setProperty("--my", `${event.clientY - box.top}px`);
+// Example questions only fill the box; the user still decides when to send.
+document.querySelectorAll("[data-example]").forEach(button => button.addEventListener("click", () => {
+  if (question.disabled) return;
+  question.value = button.dataset.example; count(); question.focus();
 }));
 function switchView(json) {
   $("answer-view").hidden = json; $("json-view").hidden = !json;
@@ -184,7 +181,6 @@ function render(data) {
   target.append(node("p", data.scope, "boundary"), engineering);
   $("latency").textContent = `${data.latency_ms} ms · Server`;
   $("json-output").textContent = JSON.stringify(data, null, 2);
-  [...target.children].forEach((child, index) => child.style.setProperty("--i", String(index)));
   document.querySelector(".result-card").dataset.status = data.resolution === "engineering_review" ? "needs_clarification" : data.status;
   if (window.matchMedia("(max-width: 880px)").matches) {
     document.querySelector(".result-card").scrollIntoView({behavior: "smooth", block: "start"});
@@ -229,7 +225,7 @@ form.addEventListener("submit", async event => {
     resultCard.dataset.status = "upstream_error";
     $("json-output").textContent = "No valid API response received.";
   } finally {
-    button.disabled = false; button.textContent = replyExpected ? "Send reply ↗" : "Get answer ↗";
+    button.disabled = false; button.textContent = replyExpected ? "Send reply" : "Get answer";
     $("new-question").disabled = false; question.disabled = false;
     if (replyExpected) question.focus();
     $("result").setAttribute("aria-busy", "false"); resultCard.classList.remove("is-busy");

@@ -31,13 +31,14 @@ Logs and generated results stay inside ignored `data/`. The user-facing server o
 
 ## Frontend redesign after the fresh setup
 
-The web UI (`app/static/`) was redesigned after the fresh setup above: typography, palette, motion and interaction polish. API endpoints, agent logic, retrieval and response contracts were not changed, and every label referenced by the walkthrough is still present. Re-checked in the application's own environment:
+The web UI (`app/static/`) was redesigned after the fresh setup above (typography, palette and interaction polish) and then simplified: a single top bar replaces the sidebar, decorative effects were removed, and three example questions in the empty answer panel fill the question box without sending it. API endpoints, agent logic, retrieval and response contracts were not changed, and every label referenced by the walkthrough is still present. Re-checked in the application's own environment after the simplification:
 
 | Check | Result |
 |---|---|
 | Unit/integration suite | 228 passed |
 | Browser walkthrough over real MCP, headless Chrome | 401 clarification → three checks (`checks_available`, `awaiting_reply`, `context_used=true`, `user_turns=2`) → engineering handoff with download; **New question** reset → user-reported resolution; document answer, unsupported-version boundary and combined document/code question |
-| Screenshot | `support-checks-redesign.png` recaptured from the redesigned UI |
+| Example questions | Each fills the box, updates the character count and focuses it; all three were then sent through the walkthrough above |
+| Screenshot | `support-workspace.png` recaptured from the simplified UI |
 
 Code-evidence excerpts render with font ligatures disabled, so `->` and `!=` are shown exactly as in the source.
 

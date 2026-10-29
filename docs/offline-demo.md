@@ -1,6 +1,6 @@
 # Three-minute offline demonstration
 
-Audience: a reviewer evaluating the customer-support workflow and engineering design. Use the [quickstart](quickstart.md) with `ENABLE_GEMINI=0` and `CODE_SEARCH_BACKEND=mcp_stdio`. Check that the sidebar footer shows v0.12.0. Initial dependency installation and indexing are required; the demonstration itself needs no model key or model API calls.
+Audience: a reviewer evaluating the customer-support workflow and engineering design. Use the [quickstart](quickstart.md) with `ENABLE_GEMINI=0` and `CODE_SEARCH_BACKEND=mcp_stdio`. Check that the footer shows v0.12.0. Initial dependency installation and indexing are required; the demonstration itself needs no model key or model API calls.
 
 ## 0:00–0:30 — Explain the problem
 
@@ -54,4 +54,4 @@ The Gemini commands above are dry runs. They validate payloads without reading k
 
 The demo establishes task delegation, real MCP retrieval, source provenance, bounded context and explicit outcomes. It does not establish autonomous reasoning, semantic search, measured support-cost reductions, verified production fixes or production readiness.
 
-![Reviewed checks and reply context](support-checks-redesign.png)
+![Reviewed checks and reply context](support-workspace.png)
